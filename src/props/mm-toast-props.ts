@@ -21,7 +21,7 @@ export interface DefaultToastProps extends MMDefaultProps {
 }
 
 export interface DefaultToastActionProps extends MMDefaultProps {
-    onClose?: () => void;
+    onClose?: (actionData?: FlexibleType) => void;
     onAction?: (actionData?: FlexibleType) => void;
     actionData?: FlexibleType
     autoHide?: boolean
@@ -57,4 +57,5 @@ export interface AppToastActionProps extends DefaultToastActionProps {
     position?: AppToastPosition;
     theme?: AppToastTheme;
     transition?: AppToastTransition;
+    swipeToClose?: boolean;
 }
