@@ -26,6 +26,7 @@ export interface DefaultToastActionProps extends MMDefaultProps {
     actionData?: FlexibleType
     autoHide?: boolean
     visibilityTimeMS?: number
+    message: string
 }
 
 export interface WebToastProps extends DefaultToastProps {
