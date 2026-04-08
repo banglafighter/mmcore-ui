@@ -1,0 +1,107 @@
+= Tailwind v4 Theme Variables
+
+== Default theme variables
+```
+@layer theme, base, components, utilities;
+```
+
+This line declares the order of Tailwind CSS layers.
+[cols="1,3"]
+|===
+|Layer |Purpose
+
+|theme
+|Design tokens (colors, spacing, variables)
+
+|base
+|Global/reset styles (HTML, body, defaults)
+
+|components
+|Reusable UI classes (buttons, cards)
+
+|utilities
+|Atomic utility classes (p-4, text-red-500)
+|===
+
+
+== Inline Overview
+In Tailwind CSS v4, theme tokens are defined using `@theme`.
+When a token references another CSS variable (`var(--x)`), you must use `@theme inline`.
+
+=== Why `inline` is needed
+Tailwind generates utilities at build time.
+
+If you write:
+
+[source,css]
+----
+@theme {
+  --color-primary: var(--primary);
+}
+----
+
+Tailwind cannot resolve `var(--primary)` at build time.
+
+This causes issues like:
+- opacity utilities (`bg-primary/50`) not working
+- color mixing failing
+- inconsistent theming
+
+=== Solution: `@theme inline`
+
+[source,css]
+----
+@theme inline {
+  --color-primary: var(--primary);
+}
+----
+
+This tells Tailwind:
+"Keep this value dynamic and resolve it at runtime."
+
+=== Example (Light/Dark Theme)
+
+[source,css]
+----
+:root {
+  --primary: white;
+}
+
+.dark {
+  --primary: black;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+}
+----
+
+=== Usage
+
+[source,html]
+----
+<div class="bg-primary text-primary-foreground">
+  Hello World
+</div>
+----
+
+Result:
+- Light mode → white background
+- Dark mode → black background
+
+=== Rule of Thumb
+
+- Use `@theme inline` → when using `var(...)`
+- Use `@theme` → for static values (e.g. `#fff`)
+
+=== Mental Model
+
+- `@theme` = static value
+- `@theme inline` = dynamic reference
+
+=== Summary
+
+`@theme inline` is required for:
+- CSS variable-based theming
+- dark/light mode switching
+- full Tailwind feature support
