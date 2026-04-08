@@ -1,0 +1,92 @@
+/* Following Everything according to Tailwind CSS v4 Model */
+:root {
+    --background: oklch(0.145 0 0);/* Background Colore : bg-background / text-background */
+    --foreground: oklch(0.985 0 0);/* Foreground Colore : bg-foreground / text-foreground */
+
+    --primary: oklch(0.205 0 0);/* Primary Colore : bg-primary / text-primary */
+    --primary-foreground: oklch(0.985 0 0);/* Primary Foreground Colore : bg-primary-foreground / text-primary-foreground */
+
+    --secondary: oklch(0.97 0 0);/* Secondary Colore : bg-secondary / text-secondary */
+    --secondary-foreground: oklch(0.205 0 0);/* Secondary Foreground Colore : bg-secondary-foreground / text-secondary-foreground */
+
+    --muted: oklch(0.97 0 0);/* Muted Colore : bg-muted / text-muted */
+    --muted-foreground: oklch(0.556 0 0);/* Muted Foreground Colore : bg-muted-foreground / text-muted-foreground */
+
+    --danger: oklch(0.97 0 0);/* Danger Colore : bg-danger / text-danger */
+    --danger-foreground: oklch(0.556 0 0);/* Danger Foreground Colore : bg-danger-foreground / text-danger-foreground */
+
+    --warning: oklch(0.97 0 0);/* Warning Colore : bg-warning / text-warning */
+    --warning-foreground: oklch(0.556 0 0);/* Warning Foreground Colore : bg-warning-foreground / text-warning-foreground */
+
+    --info: oklch(0.97 0 0);/* Info Colore : bg-info / text-info */
+    --info-foreground: oklch(0.556 0 0);/* Info Foreground Colore : bg-info-foreground / text-info-foreground */
+
+    --success: oklch(0.97 0 0);/* Success Colore : bg-success / text-success */
+    --success-foreground: oklch(0.556 0 0);/* Success Foreground Colore : bg-success-foreground / text-success-foreground */
+
+    --accent: oklch(0.97 0 0); /* Highlighted Colore : bg-accent / text-accent */
+    --accent-foreground: oklch(0.556 0 0); /* Highlighted Foreground Colore : bg-accent-foreground / text-accent-foreground */
+
+    --card: oklch(1 0 0); /* Card Colore : bg-card / text-card */
+    --card-foreground: oklch(0.145 0 0); /* Card Foreground Colore : bg-card-foreground / text-card-foreground */
+
+    --popover: oklch(1 0 0); /* Popover Colore : bg-popover / text-popover */
+    --popover-foreground: oklch(0.145 0 0); /* Popover Foreground Colore : bg-popover-foreground / text-popover-foreground */
+
+    --input: oklch(0.922 0 0); /* Input Colore : bg-input / text-input */
+    --ring: oklch(0.708 0 0); /* Ring Colore : bg-ring / text-ring */
+
+    --radius: 0.625rem; /* Radius base for rounded-* */
+}
+
+
+/* Tailwind CSS - V4 */
+@theme inline {
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-danger: var(--danger);
+    --color-danger-foreground: var(--danger-foreground);
+
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
+
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+
+}
+
+
