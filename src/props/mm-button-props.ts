@@ -1,4 +1,5 @@
 import {MMDefaultProps} from "../common/mm-default-props";
+import {UIComponentProps} from "mmcore";
 
 export type ButtonVariant = "primary" | "secondary" | "info" | "danger" | "warning" | "success" | "outline" | "link"
 export type ButtonSize = "default" | "sm" | "xs" | "lg" | "icon" | "iconSm" | "iconLg" | "iconXs"
@@ -10,8 +11,10 @@ export interface DefaultButtonProps extends MMDefaultProps {
     size?: ButtonSize
 }
 
-export interface WebButtonProps extends DefaultButtonProps {
+export interface WebButtonPropsBase extends DefaultButtonProps {
     type?: ButtonType
 }
+
+export type WebButtonProps = WebButtonPropsBase & UIComponentProps<"button">
 
 export interface AppButtonProps extends DefaultButtonProps {}
