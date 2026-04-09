@@ -1,4 +1,4 @@
-import {FlexibleType, MMDefaultProps} from "./mm-default-props";
+import {FlexibleType, MMDefaultProps} from "../common/mm-default-props";
 
 export type DefaultToastPosition = "top" | "bottom"
 export type DefaultToastType = "success" | "error" | "info"
