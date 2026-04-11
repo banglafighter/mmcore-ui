@@ -7,6 +7,8 @@ export interface DefaultCardHeaderProps extends MMDefaultProps {}
 
 export interface DefaultCardFooterProps extends MMDefaultProps {}
 
+export interface DefaultCardBoydProps extends MMDefaultProps {}
+
 export interface DefaultCardTitleProps extends MMDefaultProps {}
 
 export interface DefaultCardSubTitleProps extends MMDefaultProps {}
@@ -20,6 +22,8 @@ export interface WebCardHeaderProps extends DefaultCardHeaderProps {}
 
 export interface WebCardFooterProps extends DefaultCardFooterProps {}
 
+export interface WebCardBodyProps extends DefaultCardBoydProps {}
+
 export interface WebCardTitleProps extends DefaultCardTitleProps {}
 
 export interface WebCardSubTitleProps extends DefaultCardSubTitleProps {}
@@ -32,6 +36,8 @@ export interface AppCardProps extends DefaultCardProps {}
 export interface AppCardHeaderProps extends DefaultCardHeaderProps {}
 
 export interface AppCardFooterProps extends DefaultCardFooterProps {}
+
+export interface AppCardBodyProps extends DefaultCardBoydProps {}
 
 export interface AppCardTitleProps extends DefaultCardTitleProps {}
 
