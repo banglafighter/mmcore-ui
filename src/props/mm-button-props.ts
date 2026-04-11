@@ -18,3 +18,17 @@ export interface WebButtonPropsBase extends DefaultButtonProps {
 export type WebButtonProps = WebButtonPropsBase & UIComponentProps<"button">
 
 export interface AppButtonProps extends DefaultButtonProps {}
+
+
+export type ButtonGroupOrientation = 'horizontal' | 'vertical'
+
+export interface DefaultButtonGroupProps extends MMDefaultProps {
+    orientation?: ButtonGroupOrientation
+}
+
+export interface WebButtonGroupPropsBase extends DefaultButtonGroupProps {}
+
+export type WebButtonGroupProps = WebButtonGroupPropsBase & UIComponentProps<"div">
+
+
+export interface AppButtonGroupProps extends DefaultButtonGroupProps {}
