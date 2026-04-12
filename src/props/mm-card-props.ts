@@ -1,4 +1,5 @@
 import {MMDefaultProps} from "../common/mm-default-props";
+import {UIComponentProps} from "mmcore";
 
 
 export interface DefaultCardProps extends MMDefaultProps {}
@@ -16,19 +17,26 @@ export interface DefaultCardSubTitleProps extends MMDefaultProps {}
 export interface DefaultCardActionProps extends MMDefaultProps {}
 
 
-export interface WebCardProps extends DefaultCardProps {}
+export interface WebCardPropsBase extends DefaultCardProps {}
+export type WebCardProps = WebCardPropsBase & UIComponentProps<"div">
 
-export interface WebCardHeaderProps extends DefaultCardHeaderProps {}
+export interface WebCardHeaderPropsBase extends DefaultCardHeaderProps {}
+export type WebCardHeaderProps = WebCardHeaderPropsBase & UIComponentProps<"div">
 
-export interface WebCardFooterProps extends DefaultCardFooterProps {}
+export interface WebCardFooterPropsBase extends DefaultCardFooterProps {}
+export type WebCardFooterProps = WebCardFooterPropsBase & UIComponentProps<"div">
 
-export interface WebCardBodyProps extends DefaultCardBoydProps {}
+export interface WebCardBodyPropsBase extends DefaultCardBoydProps {}
+export type WebCardBodyProps = WebCardBodyPropsBase & UIComponentProps<"div">
 
-export interface WebCardTitleProps extends DefaultCardTitleProps {}
+export interface WebCardTitlePropsBase extends DefaultCardTitleProps {}
+export type WebCardTitleProps = WebCardTitlePropsBase & UIComponentProps<"div">
 
-export interface WebCardSubTitleProps extends DefaultCardSubTitleProps {}
+export interface WebCardSubTitlePropsBase extends DefaultCardSubTitleProps {}
+export type WebCardSubTitleProps = WebCardSubTitlePropsBase & UIComponentProps<"div">
 
-export interface WebCardActionProps extends DefaultCardActionProps {}
+export interface WebCardActionPropsBase extends DefaultCardActionProps {}
+export type WebCardActionProps = WebCardActionPropsBase & UIComponentProps<"div">
 
 
 export interface AppCardProps extends DefaultCardProps {}
