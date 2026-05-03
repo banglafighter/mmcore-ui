@@ -1,10 +1,8 @@
-import {MMDefaultProps} from "mmcore-ui";
 import {UIComponentProps} from "mmcore";
+import {InputPropsBase, InputType} from "./mm-input-common-props";
 
-export type InputType = "text" | "password"
 
-
-export interface DefaultInputProps extends MMDefaultProps {
+export interface DefaultInputProps extends InputPropsBase {
     type: InputType
 }
 

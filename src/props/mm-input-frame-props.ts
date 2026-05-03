@@ -1,22 +1,10 @@
-import {WebGridItemPropsBase} from "mmcore-ui";
 import {UIComponentProps, UINode} from "mmcore";
+import {InputFramePropsBase} from "./mm-input-common-props";
 
 
 export type InputFrameOrientation = "vertical" | "horizontal";
 
-export interface SharedInputFrameProps extends WebGridItemPropsBase {
-    label?: string
-    labelNext?: UINode
-
-    required?: boolean
-    errorText?: string
-
-    hintsText?: string
-    isError?: boolean
-}
-
-
-export interface DefaultInputFrameProps extends SharedInputFrameProps {
+export interface DefaultInputFrameProps extends InputFramePropsBase {
     element: (labelKey: string) => UINode
     orientation?: InputFrameOrientation
     isChildFirst?: boolean
