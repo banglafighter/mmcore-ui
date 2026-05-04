@@ -11,6 +11,14 @@ export class WebFieldSpec {
 
     public text(spec: WebInputFieldProps): WebFieldSpec {
         spec.specType = "text"
+        spec.type = "text"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
+    public textarea(spec: WebInputFieldProps): WebFieldSpec {
+        spec.specType = "textarea"
+        spec.type = "textarea"
         this.allSpec.set(spec.name, spec)
         return this
     }

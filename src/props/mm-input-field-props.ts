@@ -6,8 +6,8 @@ export interface WebInputFieldPropsBase extends WebDefaultInputFieldPropsBase {
     type?: InputType
 }
 
-export type WebInputFieldProps = WebInputFieldPropsBase & UIComponentProps<"input">
+export type WebInputFieldProps = WebInputFieldPropsBase & UIComponentProps<"input"> & UIComponentProps<"textarea">
 
 
 
-export interface AppInputFieldProps extends InputFieldPropsBase {}
+export interface  AppInputFieldProps extends InputFieldPropsBase {}
