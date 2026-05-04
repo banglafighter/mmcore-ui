@@ -14,4 +14,13 @@ export class WebFieldSpec {
         this.allSpec.set(spec.name, spec)
         return this
     }
+
+    public updateSpec(spec: WebDefaultInputFieldPropsBase) {
+        if (this.allSpec.has(spec.name)) {
+            const oldSpec = this.allSpec.get(spec.name)!
+            spec.specType = oldSpec.specType
+            const newSpec = {...oldSpec, ...spec}
+            this.allSpec.set(spec.name, newSpec)
+        }
+    }
 }

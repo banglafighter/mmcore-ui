@@ -7,14 +7,14 @@ export type InputElementType = HTMLInputElement | HTMLSelectElement | HTMLTextAr
 
 
 export interface WebFieldEngineProps {
-    registerInputs: (inputs: (spec: WebFieldSpec) => WebFieldSpec) => WebFieldSpec
+    registerFields: (fields: (spec: WebFieldSpec) => WebFieldSpec) => WebFieldSpec
     registerRefs: (name: string, element: InputElementType) => void
     unregisterRefs: (name: string) => void
-    setValue: (name: string, value: MixType) => void
-    setValues: (data: Map<string, MixType>) => void
-    getValues: () => Map<string, MixType>
+    setFieldValue: (name: string, value: MixType) => void
+    setFieldValues: (data: Record<string, MixType>) => void
+    getFieldValues: () => Record<string, MixType>
     fieldSpecList: () => WebDefaultInputFieldPropsBase[]
-    updateInputSpec: (name: string, spec: WebInputFieldProps) => void
+    updateFieldSpec: (name: string, spec: WebInputFieldProps) => void
     version: number
     reload: () => void
 }
