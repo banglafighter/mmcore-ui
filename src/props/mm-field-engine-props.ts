@@ -5,6 +5,10 @@ import {WebInputFieldProps} from "./mm-input-field-props";
 
 export type InputElementType = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
 
+export interface RegisteredFieldValidated {
+    isValid: boolean
+}
+
 
 export interface WebFieldEngineProps {
     registerFields: (fields: (spec: WebFieldSpec) => WebFieldSpec) => WebFieldSpec
@@ -13,8 +17,9 @@ export interface WebFieldEngineProps {
     setFieldValue: (name: string, value: MixType) => void
     setFieldValues: (data: Record<string, MixType>) => void
     getFieldValues: () => Record<string, MixType>
+    validateRegisterFields: (notify?: boolean) => RegisteredFieldValidated
     fieldSpecList: () => WebDefaultInputFieldPropsBase[]
-    updateFieldSpec: (name: string, spec: WebInputFieldProps) => void
+    updateInputFieldSpec: (spec: WebInputFieldProps, notify?: boolean) => void
     version: number
     reload: () => void
 }

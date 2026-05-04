@@ -1,4 +1,4 @@
-import {MMDefaultProps} from "../common/mm-default-props";
+import {MMDefaultProps} from "./../common/mm-default-props";
 import {UIComponentProps} from "mmcore";
 
 

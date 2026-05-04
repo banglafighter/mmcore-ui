@@ -1,13 +1,14 @@
-import {MMDefaultProps, WebGridItemPropsBase} from "mmcore-ui";
+import {MMDefaultProps} from "./../common/mm-default-props";
 import {MixType, UINode} from "mmcore";
 import {WebFieldEngineProps} from "./mm-field-engine-props";
+import { WebGridItemPropsBase } from "./mm-grid-props";
 
 
 export type InputType = "text" | "password"
 export type AllInputType = InputType | "textarea" | "radio" | "checkbox" | "select" | "file";
 
 export interface InputDataValidator {
-    validate(name: string, value: MixType, values: Record<string, MixType>): boolean
+    validate(name: string, value: MixType, values: Record<string, MixType>, field: InputFieldPropsBase): boolean
 }
 
 export interface InputPropsBase extends MMDefaultProps {
