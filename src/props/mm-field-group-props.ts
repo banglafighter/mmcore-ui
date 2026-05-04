@@ -15,6 +15,8 @@ export interface DefaultFieldGroupProps extends MMDefaultProps {
     groupType: FieldGroupType
     startOrTopItems?: Array<unknown>
     endOrButtonItems?: Array<unknown>
+    startOrTopItemClassName?: string
+    endOrButtonItemClassName?: string
 }
 
 
