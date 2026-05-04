@@ -1,13 +1,13 @@
 import {UIComponentProps} from "mmcore";
-import {InputFieldPropsBase, InputType} from "./mm-input-common-props";
+import {InputFieldPropsBase, InputType, WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 
 
-export interface DefaultInputFieldProps extends InputFieldPropsBase {}
-
-export interface WebInputFieldPropsBase extends DefaultInputFieldProps {
+export interface WebInputFieldPropsBase extends WebDefaultInputFieldPropsBase {
     type?: InputType
-    inputClassName?: string
 }
 
 export type WebInputFieldProps = WebInputFieldPropsBase & UIComponentProps<"input">
 
+
+
+export interface AppInputFieldProps extends InputFieldPropsBase {}
