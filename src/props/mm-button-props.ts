@@ -1,7 +1,7 @@
 import {MMDefaultProps} from "../common/mm-default-props";
 import {UIComponentProps} from "mmcore";
 
-export type ButtonVariant = "primary" | "secondary" | "info" | "danger" | "warning" | "success" | "outline" | "link"
+export type ButtonVariant = "primary" | "secondary" | "info" | "danger" | "warning" | "success" | "outline" | "link" | "ghost"
 export type ButtonSize = "default" | "sm" | "xs" | "lg" | "icon" | "iconSm" | "iconLg" | "iconXs"
 export type ButtonType = 'button' | 'reset' | 'submit'
 
