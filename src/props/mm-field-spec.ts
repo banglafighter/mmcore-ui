@@ -18,8 +18,16 @@ export class WebFieldSpec {
         return this
     }
 
-    public password(spec: WebFieldGroupProps): WebFieldSpec {
+    public email(spec: WebFieldGroupProps): WebFieldSpec {
         spec.specType = "text"
+        spec.groupType = "text"
+        spec.type = "email"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
+    public password(spec: WebFieldGroupProps): WebFieldSpec {
+        spec.specType = "password"
         spec.groupType = "text"
         spec.type = "password"
         this.allSpec.set(spec.name, spec)

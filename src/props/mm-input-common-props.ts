@@ -4,7 +4,7 @@ import {WebFieldEngineProps} from "./mm-field-engine-props";
 import { WebGridItemPropsBase } from "./mm-grid-props";
 
 
-export type InputType = "text" | "textarea" | "password"
+export type InputType = "text" | "textarea" | "password" | "email"
 export type AllInputType = InputType | "radio" | "checkbox" | "select" | "file";
 
 export interface InputDataValidator {
