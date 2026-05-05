@@ -12,7 +12,7 @@ export interface DefaultFieldGroupItemProps extends MMDefaultProps {
 }
 
 export interface DefaultFieldGroupProps extends MMDefaultProps {
-    groupType: FieldGroupType
+    groupType?: FieldGroupType
     startOrTopItems?: Array<unknown>
     endOrButtonItems?: Array<unknown>
     startOrTopItemClassName?: string
@@ -27,4 +27,4 @@ export interface WebFieldGroupPropsBase extends DefaultFieldGroupProps {
     endItems?: Array<WebFieldGroupItemProps>
 }
 
-export type WebFieldGroupProps = WebFieldGroupPropsBase & Omit<WebInputFieldProps, "specType">
+export type WebFieldGroupProps = WebFieldGroupPropsBase & WebInputFieldProps

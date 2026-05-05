@@ -20,6 +20,7 @@ export interface WebFieldEngineProps {
     validateRegisterFields: (notify?: boolean) => RegisteredFieldValidated
     fieldSpecList: () => WebDefaultInputFieldPropsBase[]
     updateInputFieldSpec: (spec: WebInputFieldProps, notify?: boolean) => void
+    getSpec: <T, >(name: string) => T | undefined
     version: number
     reload: () => void
 }

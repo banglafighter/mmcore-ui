@@ -1,5 +1,6 @@
 import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
-import {WebInputFieldProps} from "./mm-input-field-props";
+import {WebFieldGroupProps} from "./mm-field-group-props";
+import {MixType} from "mmcore";
 
 
 export class WebFieldSpec {
@@ -9,26 +10,48 @@ export class WebFieldSpec {
         return Array.from(this.allSpec.values())
     }
 
-    public text(spec: WebInputFieldProps): WebFieldSpec {
+    public text(spec: WebFieldGroupProps): WebFieldSpec {
         spec.specType = "text"
+        spec.groupType = "text"
         spec.type = "text"
         this.allSpec.set(spec.name, spec)
         return this
     }
 
-    public textarea(spec: WebInputFieldProps): WebFieldSpec {
+    public password(spec: WebFieldGroupProps): WebFieldSpec {
+        spec.specType = "text"
+        spec.groupType = "text"
+        spec.type = "password"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
+    public textarea(spec: WebFieldGroupProps): WebFieldSpec {
         spec.specType = "textarea"
-        spec.type = "textarea"
+        spec.groupType = "textarea"
         this.allSpec.set(spec.name, spec)
         return this
     }
 
     public updateSpec(spec: WebDefaultInputFieldPropsBase) {
-        if (this.allSpec.has(spec.name)) {
+        if (spec && this.allSpec.has(spec.name)) {
             const oldSpec = this.allSpec.get(spec.name)!
-            spec.specType = oldSpec.specType
             const newSpec = {...oldSpec, ...spec}
             this.allSpec.set(spec.name, newSpec)
         }
     }
+
+    public updateDefaultValue(name: string, value: MixType) {
+        const spec = this.allSpec.get(name)
+        if (!spec) {
+            return
+        } else {
+            this.allSpec.set(name, {...spec, defaultValue: value})
+        }
+    }
+
+    public getSpec<T>(name: string): T | undefined {
+        return this.allSpec.get(name) as T | undefined
+    }
+
 }
