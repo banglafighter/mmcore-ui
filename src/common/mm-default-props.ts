@@ -7,5 +7,5 @@ export type FlexibleType =
   | Array<any>;
 
 export interface MMDefaultProps {
-    aux?: Record<string, any>; // Auxiliary Params for customization
+    aux?: Record<string, FlexibleType>; // Auxiliary Params for customization
 }
