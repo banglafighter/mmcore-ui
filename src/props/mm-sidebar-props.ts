@@ -4,6 +4,9 @@ import {MMDefaultProps} from "./../common/mm-default-props";
 export type SidebarMenuItemSize = "default" | "small" | "large"
 export type SidebarMenuItemVariant = "default" | "outline"
 export type DefaultSidebarContentState = "expanded" | "collapsed"
+export type SidebarSide = "left" | "right"
+export type SidebarVariant = "sidebar" | "floating" | "inset"
+export type SidebarCollapsible = "offcanvas" | "icon" | "none"
 
 
 export interface SidebarMenuItemBaseProps {
@@ -27,6 +30,9 @@ export interface DefaultSidebarProps extends MMDefaultProps {
     footer?: UINode
     body?: UINode
     menu?: SidebarMenuItemProps[]
+    side?: SidebarSide
+    collapsible?: SidebarCollapsible
+    variant?: SidebarVariant
 }
 
 export interface WebSidebarPropsBase extends DefaultSidebarProps {
@@ -37,11 +43,11 @@ export interface WebSidebarPropsBase extends DefaultSidebarProps {
 
 
 export interface DefaultSidebarContexProps {
-    state: DefaultSidebarContentState
-    open: boolean
-    setOpen: (open: boolean) => void
-    openMobile: boolean
-    setOpenMobile: (open: boolean) => void
+    // state: DefaultSidebarContentState
+    // isOpen: boolean
+    // setOpen: (open: boolean) => void
+    // openMobile: boolean
+    // setOpenMobile: (open: boolean) => void
     isMobile: boolean
     toggleSidebar: () => void
 }
