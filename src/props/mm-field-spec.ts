@@ -1,6 +1,7 @@
 import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {WebFieldGroupProps} from "./mm-field-group-props";
 import {MixType} from "mmcore";
+import {WebSelectFieldProps} from "./mm-select-field-props";
 
 
 export class WebFieldSpec {
@@ -40,6 +41,13 @@ export class WebFieldSpec {
         this.allSpec.set(spec.name, spec)
         return this
     }
+
+    public select(spec: WebSelectFieldProps): WebFieldSpec {
+        spec.specType = "select"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
 
     public updateSpec(spec: WebDefaultInputFieldPropsBase) {
         if (spec && this.allSpec.has(spec.name)) {
