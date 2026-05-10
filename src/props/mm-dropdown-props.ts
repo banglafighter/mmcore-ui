@@ -9,8 +9,8 @@ export type DropdownItemVariant = "default" | "danger"
 export interface DropdownItemBaseProps {
     nameContent: UINode
     shortcut?: string
-    actionData?: any
-    action?: (actionData?: any) => void
+    actionData?: unknown
+    action?: (actionData?: unknown) => void
     variant?: DropdownItemVariant
     hideMe?: boolean
     separator?: boolean
