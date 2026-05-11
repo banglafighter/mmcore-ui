@@ -26,6 +26,7 @@ export interface SidebarMenuItemBaseProps {
 export interface SidebarMenuItemProps extends SidebarMenuItemBaseProps {
     group?: SidebarMenuItemProps[]
     nested?: SidebarMenuItemBaseProps[]
+    collapsible?: boolean
 }
 
 export interface DefaultSidebarProps extends MMDefaultProps {
