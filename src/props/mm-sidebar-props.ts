@@ -23,10 +23,19 @@ export interface SidebarMenuItemBaseProps {
     separator?: boolean
 }
 
-export interface SidebarMenuItemProps extends SidebarMenuItemBaseProps {
-    group?: SidebarMenuItemProps[]
+export interface SidebarNestedMenuProps extends SidebarMenuItemBaseProps {
     nested?: SidebarMenuItemBaseProps[]
     collapsible?: boolean
+}
+
+export interface SidebarGroupMenuProps {
+    labelContent: UINode
+    items: SidebarNestedMenuProps[]
+}
+
+export interface SidebarMenuItemProps {
+    grouped?: SidebarGroupMenuProps
+    single?: SidebarNestedMenuProps[]
 }
 
 export interface DefaultSidebarProps extends MMDefaultProps {
