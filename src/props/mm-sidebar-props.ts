@@ -43,32 +43,38 @@ export interface WebSidebarPropsBase extends DefaultSidebarProps {
 
 
 export interface DefaultSidebarContexProps {
-    // state: DefaultSidebarContentState
-    // isOpen: boolean
-    // setOpen: (open: boolean) => void
-    // openMobile: boolean
-    // setOpenMobile: (open: boolean) => void
+    stateName: DefaultSidebarContentState
+    currentOpenState: boolean
+    mobileOpenState: boolean
+    setMobileOpenState: (open: boolean) => void
     isMobile: boolean
     toggleSidebar: () => void
+    sidebarWidth: string
+    sidebarWidthMobile: string
+    sidebarIconWidth: string
 }
 
 export interface DefaultSidebarProviderProps {
-    cookieName?: string
-    cookieMaxAge?: number
+    stateStoreName?: string
     sidebarWidth?: string
     sidebarWidthMobile?: string
     sidebarIconWidth?: string
     sidebarShortcutKey?: string
 
+    defaultState?: DefaultSidebarContentState
     isOpen?: boolean
     onOpenChange?: (open: boolean) => void
 }
 
 export interface DefaultSidebarProviderPropsBase extends DefaultSidebarProviderProps {}
 
-export interface DefaultSidebarTogglerProps {}
+export interface DefaultSidebarTogglerProps {
+    iconContent?: UINode
+}
 
-export interface WebSidebarTogglerPropsBase extends DefaultSidebarTogglerProps {}
+export interface WebSidebarTogglerPropsBase extends DefaultSidebarTogglerProps {
+    onClick?: () => void
+}
 
 export interface DefaultSidebarContentProps {}
 
