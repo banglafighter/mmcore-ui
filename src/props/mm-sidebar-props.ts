@@ -11,7 +11,10 @@ export type SidebarCollapsible = "offcanvas" | "icon" | "none"
 
 export interface SidebarMenuItemBaseProps {
     menuContent: UINode
+    menuContentAttrs?: UIComponentProps<"li">
     menuNext?: UINode
+    menuNextShowOnHover?: boolean
+    menuNextAttrs?: UIComponentProps<"div">
     actionData?: unknown
     action?: (actionData?: unknown) => void
     variant?: SidebarMenuItemVariant
@@ -29,6 +32,8 @@ export interface DefaultSidebarProps extends MMDefaultProps {
     header?: UINode
     footer?: UINode
     body?: UINode
+    menuBefore?: UINode
+    menuAfter?: UINode
     menu?: SidebarMenuItemProps[]
     side?: SidebarSide
     collapsible?: SidebarCollapsible
