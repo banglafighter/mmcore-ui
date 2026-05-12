@@ -18,6 +18,13 @@ export interface DialogEngineConfirmAlertProps {
     subTitle?: UINode
     body: UINode
     dialogSize?: DialogSize
+    footerActionButtons?: DialogFooterActionButton[]
+
+    disableCancelButton?: boolean
+    confirmCallbackData?: unknown
+    confirmButtonLabel?: UINode
+    confirmButtonVariant?: ButtonVariant
+    confirmButtonAction?: (confirmCallbackData?: unknown) => void
 }
 
 export interface DefaultDialogEngineProps extends MMDefaultProps {
@@ -25,7 +32,7 @@ export interface DefaultDialogEngineProps extends MMDefaultProps {
     confirm: (props: DialogEngineConfirmAlertProps) => void
     close: () => void
     isOpen: boolean
-    getActionValue: (dataKey: string, defaultData?: UINode) => UINode
+    getActionValue: <T>(dataKey: string, defaultData?: T) => T
 }
 
 
@@ -55,8 +62,8 @@ export interface DefaultDialogSubTitleProps extends MMDefaultProps {}
 
 export interface DialogFooterActionButton {
     variant: ButtonVariant
-    size?: ButtonSize
     label: UINode
+    size?: ButtonSize
     data?: unknown
     onClick: (data?: unknown) => void
 }
