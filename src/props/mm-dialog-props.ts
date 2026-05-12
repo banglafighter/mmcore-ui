@@ -4,7 +4,7 @@ import {ButtonSize, ButtonVariant} from "mmcore-ui";
 
 export type DialogSlideFrom = "right" | "left" | "top" | "bottom";
 export type DialogType = "dialog" | "drawer" | "alert";
-export type DialogSize = "small" | "medium" | "large" | "full";
+export type DialogSize = "tiny" | "small" | "medium" | "large" | "full";
 
 
 export interface DialogEngineOpenProps {
@@ -13,8 +13,16 @@ export interface DialogEngineOpenProps {
     slideFrom?: DialogSlideFrom
 }
 
+export interface DialogEngineConfirmAlertProps {
+    title?: UINode
+    subTitle?: UINode
+    body: UINode
+    dialogSize?: DialogSize
+}
+
 export interface DefaultDialogEngineProps extends MMDefaultProps {
     open: (props: DialogEngineOpenProps) => void
+    confirm: (props: DialogEngineConfirmAlertProps) => void
     close: () => void
     isOpen: boolean
     getActionValue: (dataKey: string, defaultData?: UINode) => UINode
@@ -23,7 +31,6 @@ export interface DefaultDialogEngineProps extends MMDefaultProps {
 
 export interface DefaultDialogProps extends MMDefaultProps {
     onOpenChange?(open: boolean): void
-
     open?: boolean
     modal?: boolean
     defaultOpen?: boolean
