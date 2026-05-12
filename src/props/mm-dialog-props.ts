@@ -53,6 +53,7 @@ export interface DefaultDialogBodyProps extends MMDefaultProps {
     slideFrom?: DialogSlideFrom;
     showCloseButton?: boolean
     dialogSize?: DialogSize
+    disableBlockClose?: boolean
 }
 
 export interface DefaultDialogTitleProps extends MMDefaultProps {}
