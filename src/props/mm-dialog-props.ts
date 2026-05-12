@@ -7,9 +7,17 @@ export type DialogType = "dialog" | "drawer" | "alert";
 export type DialogSize = "small" | "medium" | "large" | "full";
 
 
+export interface DialogEngineOpenProps {
+    title?: UINode
+    subTitle?: UINode
+    slideFrom?: DialogSlideFrom
+}
+
 export interface DefaultDialogEngineProps extends MMDefaultProps {
-    open: (title?: string, subTitle?: string, slideFrom?: DialogSlideFrom) => void
+    open: (props: DialogEngineOpenProps) => void
     close: () => void
+    isOpen: boolean
+    getActionValue: (dataKey: string, defaultData?: UINode) => UINode
 }
 
 
@@ -46,13 +54,14 @@ export interface DialogFooterActionButton {
     onClick: (data?: unknown) => void
 }
 
-export interface DefaultDialogGeneratorProps extends DefaultDialogProps, DefaultDialogBodyProps {
+export interface DefaultDialogGeneratorProps extends DefaultDialogBodyProps {
     header?: UINode
     footer?: UINode
     body: UINode
     title?: string
     subTitle?: string
     footerActionButtons?: DialogFooterActionButton[]
+    modal?: boolean
 }
 
 
