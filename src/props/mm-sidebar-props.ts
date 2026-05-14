@@ -19,7 +19,7 @@ export interface SidebarMenuItemBaseProps {
     action?: (actionData?: unknown) => void
     variant?: SidebarMenuItemVariant
     size?: SidebarMenuItemSize
-    hideMe?: boolean
+    isHidden?: boolean
     separator?: boolean
 }
 

@@ -29,7 +29,7 @@ export interface InputFramePropsBase extends WebGridItemPropsBase {
 
 export interface InputFieldPropsBase extends InputPropsBase, InputFramePropsBase {
     validator?: InputDataValidator
-    hideMe?: boolean
+    isHidden?: boolean
     specType?: AllInputType
     defaultValue?: MixType
 }

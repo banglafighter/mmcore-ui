@@ -12,7 +12,7 @@ export interface DropdownItemBaseProps {
     actionData?: unknown
     action?: (actionData?: unknown) => void
     variant?: DropdownItemVariant
-    hideMe?: boolean
+    isHidden?: boolean
     separator?: boolean
 }
 
