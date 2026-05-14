@@ -1,18 +1,27 @@
 import {MMDefaultProps} from "../common/mm-default-props";
+import {UIComponentProps} from "mmcore";
 
 
 export interface DefaultTableProps extends MMDefaultProps {}
-export interface DefaultTableHeaderProps extends MMDefaultProps {}
-export interface DefaultTableFooterProps extends MMDefaultProps {}
-export interface DefaultTableBodyProps extends MMDefaultProps {}
-export interface DefaultTableRowProps extends MMDefaultProps {}
-export interface DefaultTableHeadProps extends MMDefaultProps {}
-export interface DefaultTableCellProps extends MMDefaultProps {}
+export interface DefaultTHeaderProps extends MMDefaultProps {}
+export interface DefaultTFootProps extends MMDefaultProps {}
+export interface DefaultTBodyProps extends MMDefaultProps {}
+export interface DefaultTRProps extends MMDefaultProps {}
+export interface DefaultTHProps extends MMDefaultProps {}
+export interface DefaultTDProps extends MMDefaultProps {}
 
-export interface WebTableProps extends DefaultTableProps {}
-export interface WebTableHeaderProps extends DefaultTableHeaderProps {}
-export interface WebTableFooterProps extends DefaultTableFooterProps {}
-export interface WebTableBodyProps extends DefaultTableBodyProps {}
-export interface WebTableRowProps extends DefaultTableRowProps {}
-export interface WebTableHeadProps extends DefaultTableHeadProps {}
-export interface WebTableCellProps extends DefaultTableCellProps {}
+export interface WebTablePropsBase extends DefaultTableProps {}
+export interface WebTHeadPropsBase extends DefaultTHeaderProps {}
+export interface WebTFootPropsBase extends DefaultTFootProps {}
+export interface WebTBodyPropsBase extends DefaultTBodyProps {}
+export interface WebTRPropsBase extends DefaultTRProps {}
+export interface WebTHPropsBase extends DefaultTHProps {}
+export interface WebTDPropsBase extends DefaultTDProps {}
+
+export type WebTableProps = WebTablePropsBase & UIComponentProps<"table">;
+export type WebTHeadProps = WebTHeadPropsBase & UIComponentProps<"thead">;
+export type WebTFootProps = WebTFootPropsBase & UIComponentProps<"tfoot">;
+export type WebTBodyProps = WebTBodyPropsBase & UIComponentProps<"tbody">;
+export type WebTRProps = WebTRPropsBase & UIComponentProps<"tr">;
+export type WebTHProps = WebTHPropsBase & UIComponentProps<"th">;
+export type WebTDProps = WebTDPropsBase & UIComponentProps<"td">;
