@@ -1,6 +1,7 @@
 import {MMDefaultProps} from "../common/mm-default-props";
 import {UIComponentProps, UINode} from "mmcore";
 
+export type SortDirection = 'asc' | 'desc'
 
 export interface DefaultTableProps extends MMDefaultProps {}
 export interface DefaultTHeaderProps extends MMDefaultProps {}
@@ -36,28 +37,34 @@ export interface DefaultTableGeneratorColumnProps extends MMDefaultProps {
 }
 
 export interface DefaultTableGeneratorProps extends MMDefaultProps {
-    columns?: unknown[]
-    data?: Record<string, UINode>
     enablePagination?: boolean
     onChangeItemPerPage?: (itemPerPage: number) => void
     onChangePagination?: (pageNumber: number, itemPerPage: number) => void
     itemPerPageOptions?: Record<string, number>[]
+
+    renderRow?: (row: Record<string, UINode>, data: Record<string, UINode>[], columns: DefaultTableGeneratorColumnProps[], index: number) => UINode
+    isExternalRow?: boolean
+    skipRenderedRow?: boolean
+
+    sortAscIcon?: UINode
+    sortDescIcon?: UINode
+    sortIcon?: UINode
 }
 
 export interface DefaultTableEngineProps {
     registerColumns(columns: (columns: DefaultTableGeneratorColumnProps[]) => DefaultTableGeneratorColumnProps[]): DefaultTableGeneratorColumnProps[]
     loadData(data: Record<string, UINode>[]): void
     dataList: Record<string, UINode>[]
+    getColumns: () => DefaultTableGeneratorColumnProps[]
 }
 
 export interface WebTableGeneratorColumnProps extends DefaultTableGeneratorColumnProps {
-    thClassName?: string
-    tdClassName?: string
+    columnClassName?: string
 }
 
 export interface WebTableGeneratorPropsBase extends DefaultTableGeneratorProps {
-    columns?: WebTableGeneratorColumnProps[]
     engine: WebTableEngineProps
+    onClickSort?: (sortDirection: SortDirection, columnName?: string) => void;
 }
 
 export type WebTableGeneratorProps = WebTableGeneratorPropsBase & UIComponentProps<"div">;
@@ -65,4 +72,5 @@ export type WebTableGeneratorProps = WebTableGeneratorPropsBase & UIComponentPro
 
 export interface WebTableEngineProps extends DefaultTableEngineProps {
     registerColumns(columns: (columns: WebTableGeneratorColumnProps[]) => WebTableGeneratorColumnProps[]): WebTableGeneratorColumnProps[]
+    getColumns: () => WebTableGeneratorColumnProps[]
 }
