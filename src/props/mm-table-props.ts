@@ -1,5 +1,5 @@
 import {MMDefaultProps} from "../common/mm-default-props";
-import {UIComponentProps} from "mmcore";
+import {UIComponentProps, UINode} from "mmcore";
 
 
 export interface DefaultTableProps extends MMDefaultProps {}
@@ -25,3 +25,44 @@ export type WebTBodyProps = WebTBodyPropsBase & UIComponentProps<"tbody">;
 export type WebTRProps = WebTRPropsBase & UIComponentProps<"tr">;
 export type WebTHProps = WebTHPropsBase & UIComponentProps<"th">;
 export type WebTDProps = WebTDPropsBase & UIComponentProps<"td">;
+
+
+export interface DefaultTableGeneratorColumnProps extends MMDefaultProps {
+    headerContent?: UINode
+    columnName: string
+    sortable?: boolean
+    isHidden?: boolean
+    customize?: (row: Record<string, UINode>, data: Record<string, UINode>[], fieldName?: string, headerContent?: UINode) => UINode
+}
+
+export interface DefaultTableGeneratorProps extends MMDefaultProps {
+    columns?: unknown[]
+    data?: Record<string, UINode>
+    enablePagination?: boolean
+    onChangeItemPerPage?: (itemPerPage: number) => void
+    onChangePagination?: (pageNumber: number, itemPerPage: number) => void
+    itemPerPageOptions?: Record<string, number>[]
+}
+
+export interface DefaultTableEngineProps {
+    registerColumns(columns: (columns: DefaultTableGeneratorColumnProps[]) => DefaultTableGeneratorColumnProps[]): DefaultTableGeneratorColumnProps[]
+    loadData(data: Record<string, UINode>[]): void
+    dataList: Record<string, UINode>[]
+}
+
+export interface WebTableGeneratorColumnProps extends DefaultTableGeneratorColumnProps {
+    thClassName?: string
+    tdClassName?: string
+}
+
+export interface WebTableGeneratorPropsBase extends DefaultTableGeneratorProps {
+    columns?: WebTableGeneratorColumnProps[]
+    engine: WebTableEngineProps
+}
+
+export type WebTableGeneratorProps = WebTableGeneratorPropsBase & UIComponentProps<"div">;
+
+
+export interface WebTableEngineProps extends DefaultTableEngineProps {
+    registerColumns(columns: (columns: WebTableGeneratorColumnProps[]) => WebTableGeneratorColumnProps[]): WebTableGeneratorColumnProps[]
+}
