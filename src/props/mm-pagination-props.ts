@@ -1,7 +1,7 @@
 import {MMDefaultProps} from "../common/mm-default-props";
-import {UIComponentProps} from "mmcore";
+import {MixType, UIComponentProps, UINode} from "mmcore";
 
-export interface ItemPerPageOptionsData {
+export type ItemPerPageOptionsData = Record<string, MixType> & {
     label: string | number
     value: number
 }
@@ -17,9 +17,13 @@ export interface DefaultPaginationProps extends MMDefaultProps {
     totalPage: number
     currentPage: number
     itemPerPage: number
+    siblingCount?: number
     onChangePagination?: (pageNumber: number) => void;
     onChangeItemPerPage?: (itemPerPage: number) => void;
-    itemPerPageOptions?: Record<string, number>[]
+    itemPerPageOptions?: ItemPerPageOptionsData[]
+    nextIcon?: UINode
+    previousIcon?: UINode
+    ellipsisIcon?: UINode
 }
 
 export interface WebPaginationPropsBase extends DefaultPaginationProps {}
