@@ -33,7 +33,7 @@ export interface DefaultTableGeneratorColumnProps extends MMDefaultProps {
     columnName: string
     sortable?: boolean
     isHidden?: boolean
-    customize?: (row: Record<string, UINode>, data: Record<string, UINode>[], fieldName?: string, headerContent?: UINode) => UINode
+    customize?: (row: Record<string, UINode>, dataList: Record<string, UINode>[], columnName: string, headerContent?: UINode) => UINode
 }
 
 export interface DefaultTableGeneratorProps extends MMDefaultProps {
@@ -42,7 +42,7 @@ export interface DefaultTableGeneratorProps extends MMDefaultProps {
     onChangePagination?: (pageNumber: number, itemPerPage: number) => void
     itemPerPageOptions?: Record<string, number>[]
 
-    renderRow?: (row: Record<string, UINode>, data: Record<string, UINode>[], columns: DefaultTableGeneratorColumnProps[], index: number) => UINode
+    renderRow?: (row: Record<string, UINode>, dataList: Record<string, UINode>[], columns: DefaultTableGeneratorColumnProps[], index: number) => UINode
     isExternalRow?: boolean
     skipRenderedRow?: boolean
 
@@ -64,7 +64,8 @@ export interface WebTableGeneratorColumnProps extends DefaultTableGeneratorColum
 
 export interface WebTableGeneratorPropsBase extends DefaultTableGeneratorProps {
     engine: WebTableEngineProps
-    onClickSort?: (sortDirection: SortDirection, columnName?: string) => void;
+    onClickSort?: (sortDirection: SortDirection, columnName: string) => void;
+    renderRow?: (row: Record<string, UINode>, dataList: Record<string, UINode>[], columns: WebTableGeneratorColumnProps[], index: number) => UINode
 }
 
 export type WebTableGeneratorProps = WebTableGeneratorPropsBase & UIComponentProps<"div">;
