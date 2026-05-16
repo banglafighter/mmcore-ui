@@ -1,4 +1,4 @@
-import {WebDefaultInputFieldPropsBase} from "mmcore-ui";
+import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {UIComponentProps, UINode} from "mmcore";
 
 export interface FileFieldAcceptFile {
