@@ -1,8 +1,8 @@
 import {MMDefaultProps} from "../common/mm-default-props";
 import {UIComponentProps} from "mmcore";
 
-export type CalendarSelectionMode = "single" | "multiple" | "range";
-export type CalendarMonthYearSelection =  "label" | "dropdown" | "dropdown-months" | "dropdown-years";
+export type CalendarSelectionMode = "single" | "multiple" | "range"
+export type CalendarMonthYearSelection =  "label" | "dropdown" | "dropdown-months" | "dropdown-years"
 export type OnSelectHandler<T> = (selected: T, triggerDate: Date) => void;
 export type FormatterFn = (...args: unknown[]) => unknown;
 export type Formatters = Record<string, FormatterFn>;
