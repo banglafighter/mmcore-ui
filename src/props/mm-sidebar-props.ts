@@ -21,6 +21,7 @@ export interface SidebarMenuItemBaseProps {
     size?: SidebarMenuItemSize
     isHidden?: boolean
     separator?: boolean
+    navUrl?: string
 }
 
 export interface SidebarNestedMenuProps extends SidebarMenuItemBaseProps {
