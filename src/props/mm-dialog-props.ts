@@ -11,6 +11,9 @@ export interface DialogEngineOpenProps {
     title?: UINode
     subTitle?: UINode
     slideFrom?: DialogSlideFrom
+    disableBlockClose?: boolean
+    dialogSize?: DialogSize
+    type?: DialogType;
 }
 
 export interface DialogEngineConfirmAlertProps {
