@@ -76,8 +76,8 @@ export interface DefaultDialogGeneratorProps extends DefaultDialogBodyProps {
     header?: UINode
     footer?: UINode
     body: UINode
-    title?: string
-    subTitle?: string
+    title?: UINode
+    subTitle?: UINode
     footerActionButtons?: DialogFooterActionButton[]
     modal?: boolean
 }

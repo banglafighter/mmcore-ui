@@ -1,6 +1,6 @@
 {
   "name": "mmcore-ui",
-  "version": "0.0.5-alpha.61",
+  "version": "0.0.5-alpha.62",
   "description": "Common Library for mFront and mapend",
   "scripts": {
     "build": "tsdown",
