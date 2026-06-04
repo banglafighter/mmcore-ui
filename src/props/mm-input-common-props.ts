@@ -31,7 +31,7 @@ export interface InputFieldPropsBase extends InputPropsBase, InputFramePropsBase
     validator?: InputDataValidator
     isHidden?: boolean
     specType?: AllInputType
-    defaultValue?: MixType
+    defaultValue?: MixType | Array<any>
 }
 
 export interface WebDefaultInputFieldPropsBase extends InputFieldPropsBase {

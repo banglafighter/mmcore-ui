@@ -14,7 +14,7 @@ export interface WebFieldEngineProps {
     registerFields: (fields: (spec: WebFieldSpec) => WebFieldSpec) => WebFieldSpec
     registerRefs: (name: string, element: InputElementType) => void
     unregisterRefs: (name: string) => void
-    setFieldValue: (name: string, value: MixType) => void
+    setFieldValue: (name: string, value: MixType | Array<any>) => void
     setFieldValues: (data: Record<string, MixType>) => void
     getFieldValues: () => Record<string, MixType>
     validateRegisterFields: (notify?: boolean) => RegisteredFieldValidated

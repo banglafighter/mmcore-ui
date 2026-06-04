@@ -21,6 +21,7 @@ export interface DefaultPaginationProps extends MMDefaultProps {
     onChangePagination?: (pageNumber: number) => void;
     onChangeItemPerPage?: (itemPerPage: number) => void;
     itemPerPageOptions?: ItemPerPageOptionsData[]
+    itemPerPageOptionValue?: number
     nextIcon?: UINode
     previousIcon?: UINode
     ellipsisIcon?: UINode
