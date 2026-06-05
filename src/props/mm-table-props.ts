@@ -62,10 +62,11 @@ export interface WebTableGeneratorColumnProps extends DefaultTableGeneratorColum
     columnClassName?: string
 }
 
-export interface WebTableGeneratorPropsBase extends DefaultTableGeneratorProps {
+export interface  WebTableGeneratorPropsBase extends DefaultTableGeneratorProps {
     engine: WebTableEngineProps
     onClickSort?: (sortDirection: SortDirection, columnName: string) => void;
     renderRow?: (row: Record<string, UINode>, dataList: Record<string, UINode>[], columns: WebTableGeneratorColumnProps[], index: number) => UINode
+    externalRowWrapperClassName?: string
 }
 
 export type WebTableGeneratorProps = WebTableGeneratorPropsBase & UIComponentProps<"div">;
