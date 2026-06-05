@@ -74,5 +74,5 @@ export type WebTableGeneratorProps = WebTableGeneratorPropsBase & UIComponentPro
 export interface WebTableEngineProps extends DefaultTableEngineProps {
     registerColumns(columns: (columns: WebTableGeneratorColumnProps[]) => WebTableGeneratorColumnProps[]): WebTableGeneratorColumnProps[]
     getColumns: () => WebTableGeneratorColumnProps[]
-    addDynamicColumns: (columns: (columns: WebTableGeneratorColumnProps[]) => WebTableGeneratorColumnProps[]) => void
+    addDynamicColumns: (columns: (columns: Record<string, WebTableGeneratorColumnProps>) => Record<string, WebTableGeneratorColumnProps>) => void
 }
