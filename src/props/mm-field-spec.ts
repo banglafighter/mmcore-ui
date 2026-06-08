@@ -1,7 +1,7 @@
 import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {WebFieldGroupProps} from "./mm-field-group-props";
-import {MixType} from "mmcore";
 import {WebSelectFieldProps} from "./mm-select-field-props";
+import {FieldValueType} from "./mm-field-engine-props";
 
 
 export class WebFieldSpec {
@@ -65,7 +65,7 @@ export class WebFieldSpec {
         }
     }
 
-    public updateDefaultValue(name: string, value: MixType) {
+    public updateDefaultValue(name: string, value: FieldValueType) {
         const spec = this.allSpec.get(name)
         if (!spec) {
             return

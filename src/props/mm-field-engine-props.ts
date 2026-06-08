@@ -9,14 +9,16 @@ export interface RegisteredFieldValidated {
     isValid: boolean
 }
 
+export type FieldValueType = string | boolean | number | Array<any>
 
 export interface WebFieldEngineProps {
     registerFields: (fields: (spec: WebFieldSpec) => WebFieldSpec) => WebFieldSpec
     registerRefs: (name: string, element: InputElementType) => void
+    setFieldErrors: (errors: Record<string, string>, notify?: boolean) => void
     unregisterRefs: (name: string) => void
-    setFieldValue: (name: string, value: MixType | Array<any>) => void
-    setFieldValues: (data: Record<string, MixType>) => void
-    getFieldValues: () => Record<string, MixType>
+    setFieldValue: (name: string, value: FieldValueType) => void
+    setFieldValues: (data: Record<string, FieldValueType>) => void
+    getFieldValues: () => Record<string, FieldValueType>
     validateRegisterFields: (notify?: boolean) => RegisteredFieldValidated
     fieldSpecList: () => WebDefaultInputFieldPropsBase[]
     updateInputFieldSpec: (spec: WebInputFieldProps, notify?: boolean) => void
