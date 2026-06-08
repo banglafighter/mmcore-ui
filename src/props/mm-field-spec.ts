@@ -2,6 +2,7 @@ import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {WebFieldGroupProps} from "./mm-field-group-props";
 import {WebSelectFieldProps} from "./mm-select-field-props";
 import {FieldValueType} from "./mm-field-engine-props";
+import {WebFileFieldProps} from "./mm-file-field-props";
 
 
 export class WebFieldSpec {
@@ -52,6 +53,13 @@ export class WebFieldSpec {
         spec.specType = "text"
         spec.groupType = "text"
         spec.type = "number"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
+    public file(spec: WebFileFieldProps): WebFieldSpec {
+        spec.specType = "file"
+        spec.type = "file"
         this.allSpec.set(spec.name, spec)
         return this
     }
