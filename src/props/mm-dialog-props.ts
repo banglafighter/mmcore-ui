@@ -13,7 +13,8 @@ export interface DialogEngineOpenProps {
     slideFrom?: DialogSlideFrom
     disableBlockClose?: boolean
     dialogSize?: DialogSize
-    type?: DialogType;
+    type?: DialogType
+    body?: UINode
 }
 
 export interface DialogEngineConfirmAlertProps {
@@ -31,7 +32,7 @@ export interface DialogEngineConfirmAlertProps {
 }
 
 export interface DefaultDialogEngineProps extends MMDefaultProps {
-    open: (props: DialogEngineOpenProps) => void
+    open: (props?: DialogEngineOpenProps) => void
     confirm: (props: DialogEngineConfirmAlertProps) => void
     close: () => void
     isOpen: boolean

@@ -48,6 +48,14 @@ export class WebFieldSpec {
         return this
     }
 
+    public number(spec: WebFieldGroupProps): WebFieldSpec {
+        spec.specType = "text"
+        spec.groupType = "text"
+        spec.type = "number"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
 
     public updateSpec(spec: WebDefaultInputFieldPropsBase) {
         if (spec && this.allSpec.has(spec.name)) {
