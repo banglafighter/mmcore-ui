@@ -1,4 +1,3 @@
-import {MixType} from "mmcore";
 import {WebFieldSpec} from "./mm-field-spec";
 import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {WebInputFieldProps} from "./mm-input-field-props";
@@ -9,7 +8,7 @@ export interface RegisteredFieldValidated {
     isValid: boolean
 }
 
-export type FieldValueType = string | boolean | number | Array<any>
+export type FieldValueType = string | boolean | number | Array<any> | File[] | File
 
 export interface WebFieldEngineProps {
     registerFields: (fields: (spec: WebFieldSpec) => WebFieldSpec) => WebFieldSpec
