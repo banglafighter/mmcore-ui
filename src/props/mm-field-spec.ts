@@ -4,6 +4,7 @@ import {WebSelectFieldProps} from "./mm-select-field-props";
 import {FieldValueType} from "./mm-field-engine-props";
 import {WebFileFieldProps} from "./mm-file-field-props";
 import {WebDateTimeFieldProps} from "./mm-date-time-field-props";
+import {WebCheckFieldProps} from "./mm-check-field-props";
 
 
 export class WebFieldSpec {
@@ -72,6 +73,19 @@ export class WebFieldSpec {
         return this
     }
 
+    public checkbox(spec: WebCheckFieldProps): WebFieldSpec {
+        spec.specType = "checkbox"
+        spec.type = "checkbox"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
+    public switch(spec: WebCheckFieldProps): WebFieldSpec {
+        spec.specType = "checkbox"
+        spec.type = "switch"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
 
     public updateSpec(spec: WebDefaultInputFieldPropsBase) {
         if (spec && this.allSpec.has(spec.name)) {

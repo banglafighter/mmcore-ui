@@ -2,12 +2,12 @@ import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {UIComponentProps, UIElement, UINode} from "mmcore";
 
 export enum FileMimeTypes {
-    Image = "image/*",
-    Video = "video/*",
-    Audio = "audio/*",
-    Text = "text/*",
-    Application = "application/*",
-    Font = "font/*"
+    Image = "image/",
+    Video = "video/",
+    Audio = "audio/",
+    Text = "text/",
+    Application = "application/",
+    Font = "font/"
 }
 
 export interface FileFieldAcceptFile {
@@ -20,7 +20,7 @@ export interface WebFileFieldPropsBase extends WebDefaultInputFieldPropsBase {
     maxFiles?: number
     multiple?: boolean
     mimeType?: FileMimeTypes
-    acceptFileExtensions?: string[]
+    acceptFileExtensions?: string[] // ["jpg", "png", "jpeg"]
     centerContent?: UINode
     preview?: (multiple: boolean, isFile: boolean, files: File | File[] | string | string[]) => UINode | UIElement
 }
