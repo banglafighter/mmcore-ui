@@ -3,6 +3,7 @@ import {WebFieldGroupProps} from "./mm-field-group-props";
 import {WebSelectFieldProps} from "./mm-select-field-props";
 import {FieldValueType} from "./mm-field-engine-props";
 import {WebFileFieldProps} from "./mm-file-field-props";
+import {WebDateTimeFieldProps} from "./mm-date-time-field-props";
 
 
 export class WebFieldSpec {
@@ -60,6 +61,13 @@ export class WebFieldSpec {
     public file(spec: WebFileFieldProps): WebFieldSpec {
         spec.specType = "file"
         spec.type = "file"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
+    public date(spec: WebDateTimeFieldProps): WebFieldSpec {
+        spec.specType = "date"
+        spec.type = "text"
         this.allSpec.set(spec.name, spec)
         return this
     }
