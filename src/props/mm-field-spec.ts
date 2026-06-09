@@ -5,6 +5,7 @@ import {FieldValueType} from "./mm-field-engine-props";
 import {WebFileFieldProps} from "./mm-file-field-props";
 import {WebDateTimeFieldProps} from "./mm-date-time-field-props";
 import {WebCheckFieldProps} from "./mm-check-field-props";
+import {WebInputNumberFieldProps} from "./mm-input-field-props";
 
 
 export class WebFieldSpec {
@@ -51,9 +52,8 @@ export class WebFieldSpec {
         return this
     }
 
-    public number(spec: WebFieldGroupProps): WebFieldSpec {
+    public number(spec: WebInputNumberFieldProps): WebFieldSpec {
         spec.specType = "text"
-        spec.groupType = "text"
         spec.type = "number"
         this.allSpec.set(spec.name, spec)
         return this
