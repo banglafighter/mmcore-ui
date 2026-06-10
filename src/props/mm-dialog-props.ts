@@ -15,6 +15,7 @@ export interface DialogEngineOpenProps {
     dialogSize?: DialogSize
     type?: DialogType
     body?: UINode
+    payload?: any
 }
 
 export interface DialogEngineConfirmAlertProps {
@@ -23,6 +24,7 @@ export interface DialogEngineConfirmAlertProps {
     body: UINode
     dialogSize?: DialogSize
     footerActionButtons?: DialogFooterActionButton[]
+    payload?: any
 
     disableCancelButton?: boolean
     confirmCallbackData?: unknown
@@ -31,12 +33,17 @@ export interface DialogEngineConfirmAlertProps {
     confirmButtonAction?: (confirmCallbackData?: unknown) => void
 }
 
+export interface DialogProcessor {
+    preload?: (payload: any) => Promise<void>
+}
+
 export interface DefaultDialogEngineProps extends MMDefaultProps {
     open: (props?: DialogEngineOpenProps) => void
     confirm: (props: DialogEngineConfirmAlertProps) => void
     close: () => void
     isOpen: boolean
     getActionValue: <T>(dataKey: string, defaultData?: T) => T
+    registerProcessor: (processor: DialogProcessor) => void
 }
 
 
