@@ -1,6 +1,7 @@
 import {WebFieldSpec} from "./mm-field-spec";
 import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {WebInputFieldProps} from "./mm-input-field-props";
+import {MixType} from "mmcore";
 
 export type InputElementType = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
 
@@ -24,4 +25,6 @@ export interface WebFieldEngineProps {
     getSpec: <T, >(name: string) => T | undefined
     version: number
     reload: () => void
+    setSelectOptions: (name: string, options: Record<string, MixType>[], notify?: boolean) => void
+    setSelectOptionsByOptionKey: (keyValues: Record<string, Record<string, MixType>[]>, notify?: boolean) => void
 }

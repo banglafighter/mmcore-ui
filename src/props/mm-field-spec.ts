@@ -6,10 +6,12 @@ import {WebFileFieldProps} from "./mm-file-field-props";
 import {WebDateTimeFieldProps} from "./mm-date-time-field-props";
 import {WebCheckFieldProps} from "./mm-check-field-props";
 import {WebInputNumberFieldProps} from "./mm-input-field-props";
+import {MixType} from "mmcore";
 
 
 export class WebFieldSpec {
     private allSpec: Map<string, WebDefaultInputFieldPropsBase> = new Map<string, WebDefaultInputFieldPropsBase>()
+    private selectNameAndOptionKey: Map<string, string> = new Map<string, string>()
 
     public getSpecList(): WebDefaultInputFieldPropsBase [] {
         return Array.from(this.allSpec.values())
@@ -48,6 +50,9 @@ export class WebFieldSpec {
 
     public select(spec: WebSelectFieldProps): WebFieldSpec {
         spec.specType = "select"
+        if (spec.optionKey) {
+            this.selectNameAndOptionKey.set(spec.name, spec.optionKey)
+        }
         this.allSpec.set(spec.name, spec)
         return this
     }
@@ -106,6 +111,25 @@ export class WebFieldSpec {
 
     public getSpec<T>(name: string): T | undefined {
         return this.allSpec.get(name) as T | undefined
+    }
+
+    public setSelectOptions(name: string, options: Record<string, MixType>[]) {
+        const spec: WebSelectFieldProps | undefined = this.getSpec<WebSelectFieldProps>(name)
+        if (spec && "options" in spec) {
+            spec.options = options
+            this.updateSpec(spec)
+        }
+    }
+
+    public setSelectOptionsByOptionKey(keyValues: Record<string, Record<string, MixType>[]>) {
+        if (!keyValues) {
+            return
+        }
+        for (const [selectName, optionKey] of this.selectNameAndOptionKey.entries()) {
+            if (Object.hasOwn(keyValues, optionKey)) {
+                this.setSelectOptions(selectName, keyValues[optionKey])
+            }
+        }
     }
 
 }

@@ -5,6 +5,7 @@ export interface WebSelectFieldPropsBase extends WebDefaultInputFieldPropsBase {
     options: Record<string, MixType>[]
     labelKey: string
     valueKey: string
+    optionKey?: string
     multiple?: boolean
     placeholder?: string
     showClear?: boolean

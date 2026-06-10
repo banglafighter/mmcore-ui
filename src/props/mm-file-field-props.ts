@@ -22,7 +22,8 @@ export interface WebFileFieldPropsBase extends WebDefaultInputFieldPropsBase {
     mimeType?: FileMimeTypes
     acceptFileExtensions?: string[] // ["jpg", "png", "jpeg"]
     centerContent?: UINode
-    preview?: (multiple: boolean, isFile: boolean, files: File | File[] | string | string[]) => UINode | UIElement
+    preview?: (multiple: boolean, isFile: boolean, files: File | File[] | string | string[], relativeUrl?: string) => UINode | UIElement
+    relativeUrl?: string
 }
 
 export type WebFileFieldProps = WebFileFieldPropsBase & UIComponentProps<"input">
