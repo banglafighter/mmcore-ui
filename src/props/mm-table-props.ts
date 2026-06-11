@@ -33,7 +33,7 @@ export interface DefaultTableGeneratorColumnProps extends MMDefaultProps {
     columnName: string
     sortable?: boolean
     isHidden?: boolean
-    customize?: (row: Record<string, UINode>, dataList: Record<string, UINode>[], columnName: string, headerContent?: UINode) => UINode
+    customize?: (row: Record<string, any>, dataList: Record<string, any>[], columnName: string, headerContent?: UINode) => UINode
 }
 
 export interface DefaultTableGeneratorProps extends MMDefaultProps {
@@ -42,7 +42,7 @@ export interface DefaultTableGeneratorProps extends MMDefaultProps {
     onChangePagination?: (pageNumber: number, itemPerPage: number) => void
     itemPerPageOptions?: Record<string, number>[]
 
-    renderRow?: (row: Record<string, UINode>, dataList: Record<string, UINode>[], columns: DefaultTableGeneratorColumnProps[], index: number) => UINode
+    renderRow?: (row: Record<string, any>, dataList: Record<string, any>[], columns: DefaultTableGeneratorColumnProps[], index: number) => UINode
     isExternalRow?: boolean
     skipRenderedRow?: boolean
 
@@ -53,8 +53,8 @@ export interface DefaultTableGeneratorProps extends MMDefaultProps {
 
 export interface DefaultTableEngineProps {
     registerColumns(columns: (columns: DefaultTableGeneratorColumnProps[]) => DefaultTableGeneratorColumnProps[]): DefaultTableGeneratorColumnProps[]
-    loadData(data: Record<string, UINode>[]): void
-    dataList: Record<string, UINode>[]
+    loadData(data: Record<string, any>[]): void
+    dataList: Record<string, any>[]
     getColumns: () => DefaultTableGeneratorColumnProps[]
 }
 
@@ -65,7 +65,7 @@ export interface WebTableGeneratorColumnProps extends DefaultTableGeneratorColum
 export interface  WebTableGeneratorPropsBase extends DefaultTableGeneratorProps {
     engine: WebTableEngineProps
     onClickSort?: (sortDirection: SortDirection, columnName: string) => void;
-    renderRow?: (row: Record<string, UINode>, dataList: Record<string, UINode>[], columns: WebTableGeneratorColumnProps[], index: number) => UINode
+    renderRow?: (row: Record<string, any>, dataList: Record<string, any>[], columns: WebTableGeneratorColumnProps[], index: number) => UINode
     externalRowWrapperClassName?: string
 }
 
