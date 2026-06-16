@@ -16,8 +16,9 @@ export interface WebFieldEngineProps {
     registerRefs: (name: string, element: InputElementType) => void
     setFieldErrors: (errors: Record<string, string>, notify?: boolean) => void
     unregisterRefs: (name: string) => void
-    setFieldValue: (name: string, value: FieldValueType, ignoreNull?: boolean) => void
-    setFieldValues: (data: Record<string, FieldValueType>, ignoreNull?: boolean) => void
+    setFieldValue: (name: string, value: FieldValueType, ignoreNull?: boolean, setInputValue?: boolean) => void
+    getFieldValue: (name: string, defaultValue?: FieldValueType) => FieldValueType | undefined
+    setFieldValues: (data: Record<string, FieldValueType>, ignoreNull?: boolean, setInputValue?: boolean) => void
     getFieldValues: () => Record<string, FieldValueType>
     validateRegisterFields: (notify?: boolean) => RegisteredFieldValidated
     fieldSpecList: () => WebDefaultInputFieldPropsBase[]
