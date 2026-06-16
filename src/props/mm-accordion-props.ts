@@ -4,7 +4,7 @@ import {UIComponentProps, UINode} from "mmcore";
 export type AccordionSelectionType = "single" | "multiple"
 
 export interface DefaultAccordionItemProps extends MMDefaultProps {
-    accordionId?: string
+    accordionId: string
     labelContent: UINode
     component: UINode
     isHidden?: boolean
@@ -19,6 +19,7 @@ export interface DefaultAccordionProps extends MMDefaultProps {
 
 export interface WebAccordionItemPropsBase extends DefaultAccordionItemProps {
     componentClassName?: string
+    headerClassName?: string
     itemClassName?: string
 }
 
