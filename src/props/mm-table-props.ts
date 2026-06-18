@@ -11,7 +11,9 @@ export interface DefaultTRProps extends MMDefaultProps {}
 export interface DefaultTHProps extends MMDefaultProps {}
 export interface DefaultTDProps extends MMDefaultProps {}
 
-export interface WebTablePropsBase extends DefaultTableProps {}
+export interface WebTablePropsBase extends DefaultTableProps {
+    wrapperClassName?: string;
+}
 export interface WebTHeadPropsBase extends DefaultTHeaderProps {}
 export interface WebTFootPropsBase extends DefaultTFootProps {}
 export interface WebTBodyPropsBase extends DefaultTBodyProps {}
