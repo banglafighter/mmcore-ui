@@ -31,8 +31,8 @@ export type WebTDProps = WebTDPropsBase & UIComponentProps<"td">;
 
 
 export interface DefaultTableGeneratorColumnProps extends MMDefaultProps {
-    headerContent?: UINode
-    columnName: string
+    label?: UINode
+    name: string
     sortable?: boolean
     isHidden?: boolean
     customize?: (row: Record<string, any>, dataList: Record<string, any>[], columnName: string, headerContent?: UINode) => UINode
