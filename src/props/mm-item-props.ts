@@ -32,7 +32,7 @@ export interface WebItemTitlePropsBase extends DefaultItemTitleProps {}
 export type WebItemTitleProps = WebItemTitlePropsBase & UIComponentProps<"div">
 
 export interface WebItemSubTitlePropsBase extends DefaultItemSubTitleProps {}
-export type WebItemSubTitleProps = WebItemSubTitlePropsBase & UIComponentProps<"p">
+export type WebItemSubTitleProps = WebItemSubTitlePropsBase & UIComponentProps<"div">
 
 export interface WebItemActionPropsBase extends DefaultItemActionProps {}
 export type WebItemActionProps = WebItemActionPropsBase & UIComponentProps<"div">
