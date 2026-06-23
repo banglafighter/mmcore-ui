@@ -8,6 +8,14 @@ import {WebCheckFieldProps} from "./mm-check-field-props";
 import {WebInputNumberFieldProps} from "./mm-input-field-props";
 import {MixType} from "mmcore";
 
+export type WebFieldAllTypeProps =
+    | WebDefaultInputFieldPropsBase
+    | WebFieldGroupProps
+    | WebSelectFieldProps
+    | WebInputNumberFieldProps
+    | WebFileFieldProps
+    | WebDateTimeFieldProps
+    | WebCheckFieldProps
 
 export class WebFieldSpec {
     private allSpec: Map<string, WebDefaultInputFieldPropsBase> = new Map<string, WebDefaultInputFieldPropsBase>()

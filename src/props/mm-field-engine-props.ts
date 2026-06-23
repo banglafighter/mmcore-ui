@@ -1,4 +1,4 @@
-import {WebFieldSpec} from "./mm-field-spec";
+import {WebFieldAllTypeProps, WebFieldSpec} from "./mm-field-spec";
 import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {WebInputFieldProps} from "./mm-input-field-props";
 import {MixType} from "mmcore";
@@ -28,4 +28,5 @@ export interface WebFieldEngineProps {
     reload: () => void
     setSelectOptions: (name: string, options: Record<string, MixType>[], notify?: boolean) => void
     setSelectOptionsByOptionKey: (keyValues: Record<string, Record<string, MixType>[]>, notify?: boolean) => void
+    updateSpec: (specs: Record<string, Partial<WebFieldAllTypeProps>>, notify?: boolean) => void
 }
