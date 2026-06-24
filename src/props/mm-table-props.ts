@@ -35,7 +35,7 @@ export interface DefaultTableGeneratorColumnProps extends MMDefaultProps {
     name: string
     sortable?: boolean
     isHidden?: boolean
-    customize?: (row: Record<string, any>, dataList: Record<string, any>[], columnName: string, headerContent?: UINode) => UINode
+    customize?: (row: Record<string, any>, dataList: Record<string, any>[], name: string, label?: UINode) => UINode
 }
 
 export interface DefaultTableGeneratorProps extends MMDefaultProps {
