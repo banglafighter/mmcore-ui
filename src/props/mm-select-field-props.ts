@@ -9,6 +9,7 @@ export interface WebSelectFieldPropsBase extends WebDefaultInputFieldPropsBase {
     multiple?: boolean
     placeholder?: string
     showClear?: boolean
+    isTagMode?: boolean
 
     customOption?: (item: any, labelKey: string, valueKey: string, options: Record<string, MixType>[]) => UINode
     emptyOptionContent?: UINode

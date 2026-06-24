@@ -29,4 +29,6 @@ export interface WebFieldEngineProps {
     setSelectOptions: (name: string, options: Record<string, MixType>[], notify?: boolean) => void
     setSelectOptionsByOptionKey: (keyValues: Record<string, Record<string, MixType>[]>, notify?: boolean) => void
     updateSpec: (specs: Record<string, Partial<WebFieldAllTypeProps>>, notify?: boolean) => void
+    setSelectOptionCache: (name: string, value: Record<string, MixType>[]) => void
+    getSelectOptionCache: (name: string) => Record<string, MixType>[]
 }
