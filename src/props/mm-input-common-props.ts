@@ -16,7 +16,7 @@ export interface InputPropsBase extends MMDefaultProps {
 }
 
 export interface InputFramePropsBase extends WebGridItemPropsBase {
-    label?: string
+    label?: string | UINode
     labelNext?: UINode
 
     required?: boolean
