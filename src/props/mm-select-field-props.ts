@@ -15,6 +15,7 @@ export interface WebSelectFieldPropsBase extends WebDefaultInputFieldPropsBase {
     emptyOptionContent?: UINode
     createNewItem?: (searchText: string, setNewOptions: (newOptions: Record<string, MixType>[]) => void) => void
     loadNewItem?: (updateLoader: (isLoading: boolean) => void, setNewOptions: (newOptions: Record<string, MixType>[]) => void) => void
+    loadUrlItem?: () => Promise<Record<string, MixType>[]>
 }
 
 export type WebSelectFieldProps = WebSelectFieldPropsBase & UIComponentProps<"select">
