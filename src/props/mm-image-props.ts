@@ -1,6 +1,8 @@
 import {MMDefaultProps} from "./../common/mm-default-props";
 import {UIComponentProps} from "mmcore";
 
+export type AvatarSize = "default" | "small" | "medium" | "large" | "exLarge"
+
 export interface DefaultImageProps extends MMDefaultProps {
     src: string
     height?: string
@@ -9,7 +11,7 @@ export interface DefaultImageProps extends MMDefaultProps {
     loading?: "lazy" | "eager"
     decoding?: "async" | "sync" | "auto"
     shape?: "circle" | "square" | "rounded"
-    avatar?: "default" | "small" | "medium" | "large"
+    avatar?: AvatarSize
     thumb?: "card" | "blog" | "gallery" | "product"
 
     fallback?: string
