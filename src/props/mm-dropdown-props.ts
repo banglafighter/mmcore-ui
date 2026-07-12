@@ -15,6 +15,7 @@ export interface DropdownItemBaseProps {
     variant?: DropdownItemVariant
     isHidden?: boolean
     separator?: boolean
+    isRawContent?: boolean
 }
 
 export interface DropdownItemProps extends DropdownItemBaseProps {
