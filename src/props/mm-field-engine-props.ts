@@ -9,7 +9,7 @@ export interface RegisteredFieldValidated {
     isValid: boolean
 }
 
-export type FieldValueType = string | boolean | number | Array<any> | File[] | File
+export type FieldValueType = string | boolean | number | Array<any> | File[] | File | undefined | null
 
 export interface WebFieldEngineProps {
     registerFields: (fields: (spec: WebFieldSpec) => WebFieldSpec) => WebFieldSpec
@@ -31,4 +31,5 @@ export interface WebFieldEngineProps {
     updateSpec: (specs: Record<string, Partial<WebFieldAllTypeProps>>, notify?: boolean) => void
     setSelectOptionCache: (name: string, value: Record<string, MixType>[]) => void
     getSelectOptionCache: (name: string) => Record<string, MixType>[]
+    removeValue: (name: string) => void
 }
