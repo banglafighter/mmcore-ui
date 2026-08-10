@@ -1,12 +1,19 @@
-import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
-import {WebFieldGroupProps} from "./mm-field-group-props";
+import {AllInputType, InputPropsBase, WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
+import {FieldGroupType, WebFieldGroupProps} from "./mm-field-group-props";
 import {WebSelectFieldProps} from "./mm-select-field-props";
 import {FieldValueType} from "./mm-field-engine-props";
 import {WebFileFieldProps} from "./mm-file-field-props";
 import {WebDateTimeFieldProps} from "./mm-date-time-field-props";
 import {WebCheckFieldProps} from "./mm-check-field-props";
 import {WebInputNumberFieldProps} from "./mm-input-field-props";
-import {MixType} from "mmcore";
+import {MixType, UINode} from "mmcore";
+import {WebGridItemPropsBase} from "./mm-grid-props";
+
+export interface WebFieldBreak extends InputPropsBase, WebGridItemPropsBase {
+    specType?: AllInputType | "break"
+    groupType?: FieldGroupType
+    content: UINode
+}
 
 export type WebFieldAllTypeProps =
     | WebDefaultInputFieldPropsBase
@@ -16,12 +23,13 @@ export type WebFieldAllTypeProps =
     | WebFileFieldProps
     | WebDateTimeFieldProps
     | WebCheckFieldProps
+    | WebFieldBreak
 
 export class WebFieldSpec {
-    private allSpec: Map<string, WebDefaultInputFieldPropsBase> = new Map<string, WebDefaultInputFieldPropsBase>()
+    private allSpec: Map<string, WebFieldAllTypeProps> = new Map<string, WebDefaultInputFieldPropsBase>()
     private selectNameAndOptionKey: Map<string, string> = new Map<string, string>()
 
-    public getSpecList(): WebDefaultInputFieldPropsBase [] {
+    public getSpecList(): WebFieldAllTypeProps [] {
         return Array.from(this.allSpec.values())
     }
 
@@ -96,6 +104,12 @@ export class WebFieldSpec {
     public switch(spec: WebCheckFieldProps): WebFieldSpec {
         spec.specType = "checkbox"
         spec.type = "switch"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
+    public fieldBreak(spec: WebFieldBreak): WebFieldSpec {
+        spec.specType = "break"
         this.allSpec.set(spec.name, spec)
         return this
     }
