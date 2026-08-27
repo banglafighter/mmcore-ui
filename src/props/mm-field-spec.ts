@@ -49,6 +49,14 @@ export class WebFieldSpec {
         return this
     }
 
+    public time(spec: WebFieldGroupProps): WebFieldSpec {
+        spec.specType = "text"
+        spec.groupType = "text"
+        spec.type = "time"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
     public password(spec: WebFieldGroupProps): WebFieldSpec {
         spec.specType = "password"
         spec.groupType = "text"
