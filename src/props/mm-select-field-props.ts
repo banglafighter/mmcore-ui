@@ -1,5 +1,6 @@
 import {WebDefaultInputFieldPropsBase} from "./mm-input-common-props";
 import {MixType, UIComponentProps, UINode} from "mmcore";
+import {FieldValueType} from "./mm-field-engine-props";
 
 export interface WebSelectFieldPropsBase extends WebDefaultInputFieldPropsBase {
     options: Record<string, MixType>[]
@@ -15,6 +16,7 @@ export interface WebSelectFieldPropsBase extends WebDefaultInputFieldPropsBase {
     customOption?: (item: any, labelKey: string, valueKey: string, options: Record<string, MixType>[]) => UINode
     emptyOptionContent?: UINode
     createNewItem?: (searchText: string, setNewOptions: (newOptions: Record<string, MixType>[]) => void) => void
+    createTagOptions?: (value: FieldValueType, setNewOptions: (newOptions: Record<string, MixType>[]) => void) => void
     loadNewItem?: (updateLoader: (isLoading: boolean) => void, setNewOptions: (newOptions: Record<string, MixType>[]) => void) => void
     loadUrlItem?: () => Promise<Record<string, MixType>[]>
 }
