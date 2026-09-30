@@ -114,5 +114,7 @@ export type WebDialogSubTitleProps = WebDialogSubTitlePropsBase & UIComponentPro
 export interface WebDialogGeneratorPropsBase extends DefaultDialogGeneratorProps {
     engine: WebDialogEngineProps
     dialogBodyClassName?: string
+    open?: boolean
+    onOpenChange?: (open: boolean) => void
 }
 export type WebDialogGeneratorProps = WebDialogGeneratorPropsBase & Omit<UIComponentProps<"div">, "title">
