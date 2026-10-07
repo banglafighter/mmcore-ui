@@ -21,6 +21,9 @@ export interface DefaultCalendarProps extends MMDefaultProps {
     timeZone?: string | undefined
     formatters?: Partial<Formatters>
     components?: Partial<CustomComponents>
+    month?: Date
+    defaultMonth?: Date
+    onMonthChange?: (month: Date) => void
 }
 
 export interface WebCalendarPropsBase extends DefaultCalendarProps{}
