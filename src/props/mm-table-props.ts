@@ -1,5 +1,5 @@
 import {MMDefaultProps} from "../common/mm-default-props";
-import {UIComponentProps, UINode} from "mmcore";
+import {UIComponentProps, UIElement, UINode} from "mmcore";
 
 export type SortDirection = 'asc' | 'desc'
 
@@ -69,7 +69,7 @@ export interface  WebTableGeneratorPropsBase extends DefaultTableGeneratorProps 
     onClickSort?: (sortDirection: SortDirection, columnName: string) => void;
     renderRow?: (row: Record<string, any>, dataList: Record<string, any>[], columns: WebTableGeneratorColumnProps[], index: number) => UINode
     externalRowWrapperClassName?: string
-    rowWrapper?: (row: Record<string, UINode>, index: number, children: UINode) => UINode
+    rowWrapper?: (row: Record<string, UINode>, index: number, children: UIElement) => UINode
 }
 
 export type WebTableGeneratorProps = WebTableGeneratorPropsBase & UIComponentProps<"div">;
