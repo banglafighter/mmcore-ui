@@ -8,6 +8,7 @@ import {WebCheckFieldProps} from "./mm-check-field-props";
 import {WebInputNumberFieldProps} from "./mm-input-field-props";
 import {MixType, UINode} from "mmcore";
 import {WebGridItemPropsBase} from "./mm-grid-props";
+import {WebRadioButtonFieldProps} from "./mm-radio-button-field-props";
 
 export interface WebFieldBreak extends InputPropsBase, WebGridItemPropsBase {
     specType?: AllInputType | "break"
@@ -105,6 +106,13 @@ export class WebFieldSpec {
     public checkbox(spec: WebCheckFieldProps): WebFieldSpec {
         spec.specType = "checkbox"
         spec.type = "checkbox"
+        this.allSpec.set(spec.name, spec)
+        return this
+    }
+
+    public radioButton(spec: WebRadioButtonFieldProps): WebFieldSpec {
+        spec.specType = "radioButton"
+        spec.type = "text"
         this.allSpec.set(spec.name, spec)
         return this
     }

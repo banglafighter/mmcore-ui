@@ -5,7 +5,7 @@ import { WebGridItemPropsBase } from "./mm-grid-props";
 
 
 export type InputType = "text" | "textarea" | "password" | "email" | "search" | "number" | "time"
-export type AllInputType = InputType | "radio" | "checkbox" | "select" | "file" | "date";
+export type AllInputType = InputType | "radio" | "checkbox" | "select" | "file" | "date" | "radioButton";
 
 export interface InputDataValidator {
     validate(name: string, value: FieldValueType, values: Record<string, FieldValueType>, field: InputFieldPropsBase): boolean
