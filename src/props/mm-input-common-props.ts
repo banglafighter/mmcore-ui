@@ -22,7 +22,7 @@ export interface InputFramePropsBase extends WebGridItemPropsBase {
     required?: boolean
     errorText?: string
 
-    hintsText?: string
+    hintsText?: string | UINode
     isError?: boolean
     groupName?: string
 }
