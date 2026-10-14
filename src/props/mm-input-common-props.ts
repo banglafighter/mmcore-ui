@@ -24,6 +24,7 @@ export interface InputFramePropsBase extends WebGridItemPropsBase {
 
     hintsText?: string
     isError?: boolean
+    groupName?: string
 }
 
 

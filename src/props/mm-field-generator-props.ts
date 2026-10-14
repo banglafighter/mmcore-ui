@@ -8,6 +8,7 @@ export interface DefaultFieldGeneratorProps extends DefaultGridItemProps {
     engine: unknown
     layout?: FieldGeneratorLayout
     extraConfig?: Record<string, any>
+    groupName?: string
 }
 
 export interface WebFieldGeneratorPropsBase extends WebGridPropsBase, DefaultFieldGeneratorProps {
